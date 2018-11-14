@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/buttons/FlexButton/FlexButton.js"],"names":["FlexButton"],"mappings":";;;;;;AAAA;;;;;;AAEA,IAAMA,aAAa,SAAbA,UAAa;AAAA,SAAI;AAAA;AAAA;AAAA;AAAA,GAAJ;AAAA,CAAnB;;kBAEeA,U","file":"FlexButton.js","sourcesContent":["import React from 'react';\r\n\r\nconst FlexButton = ()=><div>Custom button</div>\r\n\r\nexport default FlexButton;"]}

@@ -1,0 +1,13 @@
+*/target
+.project
+/.settings/
+*/.classpath
+*/.factorypath
+**/*.iml
+**/target/**/*
+**/bin/**/*
+**/test-output/**
+**/dist/**
+**/node_modules/**
+npm-debug.log
+**/static/static/**
