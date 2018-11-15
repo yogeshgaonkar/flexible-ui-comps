@@ -1,35 +1,44 @@
 var path = require('path');
  
 module.exports = {
-    mode: 'production',
-    entry: './src/FlexButton.js',
+    entry: './example/index.js',
     output: {
-        path: path.resolve('lib'),
-        filename: 'index.js',
-        libraryTarget: 'commonjs'
+        path: path.resolve('example'),
+        filename: 'bundle.js'
+    },
+    mode:'development',
+    devServer: {
+       contentBase: path.join(__dirname, 'example'),
+       inline: true,
+       port: 5000
     },
     module: {
-        rules: [
-            {
-                test: /\.js?$/,
-                exclude: /(node_modules)/,
-                use: 'babel-loader'
-            }
-        ]
-    },
-    externals: {      
-        // Don't bundle react or react-dom      
-        react: {          
-            commonjs: "react",          
-            commonjs2: "react",          
-            amd: "React",          
-            root: "React"      
-        },      
-        "react-dom": {          
-            commonjs: "react-dom",          
-            commonjs2: "react-dom",          
-            amd: "ReactDOM",          
-            root: "ReactDOM"      
-        }  
-    } 
+       rules: [
+          {
+             test: /\.js?$/,
+             exclude: /node_modules/,
+             loader: 'babel-loader',
+             query: {
+                presets: ['es2015', 'react']
+             }
+          },
+          {
+            test: /\.(sass|scss)$/,
+            use: [
+              'style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: [path.resolve(__dirname, 'node_modules')],
+                },
+              },
+            ],
+          },
+          {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader'],
+          },
+       ]
+    }
 }
