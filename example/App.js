@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
-import { FlexButton } from '../src';
+import { Row, Col } from 'react-bootstrap';
+import createHistory from 'history/createBrowserHistory';
+import Routing from './Routing';
+import LeftMenu from './LeftMenu';
 
+import './LeftMenu.css';
+
+
+const history = createHistory();
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <p className="App-intro">
-          All Buttons
-        </p>
-	  	 <FlexButton  />
-      </div>
+      <Row>
+        <Col md={2} id="menu-container">
+          <LeftMenu history={history} />
+        </Col>
+        <Col  md={10}>
+          <Routing history={history} />
+        </Col>
+      </Row>
     );
   }
 }
