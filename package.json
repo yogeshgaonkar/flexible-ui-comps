@@ -1,13 +1,13 @@
 {
   "name": "flexible-ui-comps",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reusable components",
   "main": "lib/index",
   "typings": "lib/index",
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --hot --open --watch",
-    "build": "babel ./src --out-dir ./lib --source-maps"
+    "build": "babel ./src --out-dir ./lib --copy-files"
   },
   "repository": {
     "type": "git",
